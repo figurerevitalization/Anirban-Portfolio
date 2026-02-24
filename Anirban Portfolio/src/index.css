@@ -1,0 +1,283 @@
+@import "tailwindcss";
+
+/* Custom Fonts */
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600&family=Archivo+Narrow:wght@600;700&display=swap');
+
+@theme {
+  --color-brand-light: #F2F2F2;
+  --color-brand-dark: #131313;
+  --color-brand-accent: #F4EDDA;
+
+  --font-mono: 'IBM Plex Mono', monospace;
+  --font-sans: 'Inter', sans-serif;
+  --font-heading: 'Archivo Narrow', sans-serif;
+}
+
+body {
+  @apply bg-brand-dark text-brand-light font-sans antialiased;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* ── Profile card: clean glass ──────────────────────────── */
+.profile-card {
+  position: relative;
+  width: 280px;
+  height: 360px;
+  border-radius: 8px;
+  overflow: hidden;
+  isolation: isolate;
+  background: rgb(10, 10, 10);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  transition: box-shadow 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .profile-card {
+    width: 320px;
+    height: 400px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .profile-card {
+    width: 340px;
+    height: 420px;
+  }
+}
+
+.profile-card:hover {
+  box-shadow: 0 24px 56px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.profile-card-inner {
+  position: relative;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(180deg, transparent 40%, rgba(10, 10, 10, 0.85) 85%);
+  overflow: hidden;
+}
+
+.profile-card-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(10, 10, 10, 0.15) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── Card Carousel: compact 3D stack, only the space it needs ── */
+.card-carousel-container {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  overflow: visible;
+}
+
+@media (min-width: 640px) {
+  .card-carousel-container {
+    padding: 0.5rem 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-carousel-container {
+    padding: 0.5rem 3rem;
+  }
+}
+
+/* Stack = single card width; side cards peek in with overlap */
+.card-carousel-stack {
+  position: relative;
+  width: 220px;
+  height: 300px;
+  overflow: visible;
+}
+
+@media (min-width: 640px) {
+  .card-carousel-stack {
+    width: 260px;
+    height: 340px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-carousel-stack {
+    width: 280px;
+    height: 360px;
+  }
+}
+
+.card-carousel-card-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 220px;
+  height: 300px;
+  margin-left: -110px;
+  transform-origin: center center;
+  touch-action: manipulation;
+  will-change: transform;
+}
+
+@media (min-width: 640px) {
+  .card-carousel-card-wrapper {
+    width: 260px;
+    height: 340px;
+    margin-left: -130px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .card-carousel-card-wrapper {
+    width: 280px;
+    height: 360px;
+    margin-left: -140px;
+  }
+}
+
+.card-carousel-card {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgb(18, 18, 18);
+  /* Real card: layered shadows for depth + subtle edge + inner frame */
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 -1px 0 rgba(0, 0, 0, 0.25) inset,
+    0 0 0 1px rgba(0, 0, 0, 0.2) inset,
+    0 2px 4px rgba(0, 0, 0, 0.12),
+    0 8px 24px rgba(0, 0, 0, 0.28),
+    0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  backface-visibility: hidden;
+}
+
+.card-carousel-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(145deg,
+      rgba(255, 255, 255, 0.04) 0%,
+      transparent 40%,
+      transparent 60%,
+      rgba(0, 0, 0, 0.15) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-carousel-card-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  pointer-events: none;
+  user-select: none;
+}
+
+
+.card-carousel-card-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(180deg, transparent 40%, rgba(10, 10, 10, 0.85) 85%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem 1.25rem;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.card-carousel-card-overlay .card-carousel-label {
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.card-carousel-card-overlay .card-carousel-sublabel {
+  margin-top: 0.0625rem;
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.025em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (min-width: 640px) {
+  .card-carousel-card-overlay .card-carousel-label {
+    font-size: 0.9375rem;
+  }
+
+  .card-carousel-card-overlay .card-carousel-sublabel {
+    font-size: 0.75rem;
+  }
+}
+
+/* Ensure Spline canvas background is transparent */
+/* Ensure Spline canvas background is transparent */
+canvas[data-engine="three.js"],
+spline-viewer {
+  background: transparent !important;
+}
+
+/* Hide the "Built with Spline" watermark */
+#logo,
+.spline-watermark,
+a[href*="spline.design"] {
+  display: none !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+::selection {
+  @apply bg-brand-light text-brand-dark;
+}
+
+/* ── Synchronized Dot Blink ──────────────────────────── */
+.dot-blink {
+  opacity: 1;
+  transition: opacity 0.1s ease-in-out;
+}
+
+:root[data-blink="false"] .dot-blink {
+  opacity: 0;
+}
+
+/* ── Retro Scanline Animation ────────────────────────── */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+.animate-scanline {
+  animation: scanline 3s linear infinite;
+}
