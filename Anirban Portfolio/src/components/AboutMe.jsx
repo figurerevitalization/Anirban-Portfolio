@@ -2,10 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import CardCarousel from './CardCarousel';
 
+const BASE = import.meta.env.BASE_URL;
+
 const ABOUT_CARDS = [
   {
     id: 'profile',
-    image: '/center.png',
+    image: `${BASE}center.png`,
     alt: 'Anirban Roy',
     overlay: (
       <>
@@ -16,7 +18,7 @@ const ABOUT_CARDS = [
   },
   {
     id: '2',
-    image: '/right.png',
+    image: `${BASE}right.png`,
     alt: 'Featured Work',
     overlay: (
       <>
@@ -27,7 +29,7 @@ const ABOUT_CARDS = [
   },
   {
     id: '3',
-    image: '/left.png',
+    image: `${BASE}left.png`,
     alt: 'Get in Touch',
     overlay: (
       <>

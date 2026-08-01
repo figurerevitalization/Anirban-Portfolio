@@ -1,9 +1,11 @@
+const BASE = import.meta.env.BASE_URL;
+
 export const PROJECTS = [
     {
         id: 1,
         slug: 'baymax-ai',
-        image: '/7.png',
-        gallery: ['/2.4.jpg', '/2.3.jpg', '/2.2.png'],
+        image: `${BASE}7.png`,
+        gallery: [`${BASE}2.4.jpg`, `${BASE}2.3.jpg`, `${BASE}2.2.png`],
         title: 'Baymax AI',
         role: 'AI Systems · Multimodal Architecture',
         stars: 5,
@@ -21,8 +23,8 @@ export const PROJECTS = [
     {
         id: 2,
         slug: 'google-summit',
-        image: '/2.png',
-        gallery: ['/5.2.jpg', '/5.1.png', '/5.3.jpg'],
+        image: `${BASE}2.png`,
+        gallery: [`${BASE}5.2.jpg`, `${BASE}5.1.png`, `${BASE}5.3.jpg`],
         title: 'GSC Summit',
         role: 'National Innovation · 2nd Place',
         stars: 5,
@@ -39,8 +41,8 @@ export const PROJECTS = [
     {
         id: 3,
         slug: 'karukarjo-erp',
-        image: '/6.png',
-        gallery: ['/6.2.jpg', '/6.1.jpg', '/6.3.png'],
+        image: `${BASE}6.png`,
+        gallery: [`${BASE}6.2.jpg`, `${BASE}6.1.jpg`, `${BASE}6.3.png`],
         title: 'Karukarjo ERP',
         role: 'ERP Architecture · Automation',
         stars: 5,
@@ -58,8 +60,8 @@ export const PROJECTS = [
     {
         id: 4,
         slug: 'vision-ai',
-        image: '/5.png',
-        gallery: ['/3.1.jpg', '/3.2.jpg', '/3.3.jpg'],
+        image: `${BASE}5.png`,
+        gallery: [`${BASE}3.1.jpg`, `${BASE}3.2.jpg`, `${BASE}3.3.jpg`],
         title: 'Vision AI',
         role: 'Computer Vision · Hackathon Build',
         stars: 5,
@@ -76,8 +78,8 @@ export const PROJECTS = [
     {
         id: 5,
         slug: 'robotics-lab',
-        image: '/1.png',
-        gallery: ['/10.1.jpg', '/10.2.jpg', '/10.3.jpg'],
+        image: `${BASE}1.png`,
+        gallery: [`${BASE}10.1.jpg`, `${BASE}10.2.jpg`, `${BASE}10.3.jpg`],
         title: 'Robotics Lab',
         role: 'Embedded Systems · Robotics Engineering',
         stars: 5,
@@ -94,8 +96,8 @@ export const PROJECTS = [
     {
         id: 6,
         slug: 'kali-webos',
-        image: '/3.png',
-        gallery: ['/9.1.png', '/9.2.png', '/9.3.png'],
+        image: `${BASE}3.png`,
+        gallery: [`${BASE}9.1.png`, `${BASE}9.2.png`, `${BASE}9.3.png`],
         title: 'Kali WebOS',
         role: 'System Simulation · Cyber UI',
         stars: 4,
@@ -113,8 +115,8 @@ export const PROJECTS = [
     {
         id: 7,
         slug: 'eco-pod',
-        image: '/4.png',
-        gallery: ['/4.1.jpg', '/4.2.jpg', '/4.3.jpg'],
+        image: `${BASE}4.png`,
+        gallery: [`${BASE}4.1.jpg`, `${BASE}4.2.jpg`, `${BASE}4.3.jpg`],
         title: 'ECO Pod',
         role: 'Secure Communication · Embedded Systems',
         stars: 5,
@@ -132,8 +134,8 @@ export const PROJECTS = [
     {
         id: 8,
         slug: 'modern-ui-ux',
-        image: '/8.png',
-        gallery: ['/11.1.jpeg', '/11.2.jpeg', '/11.3.jpeg'],
+        image: `${BASE}8.png`,
+        gallery: [`${BASE}11.1.jpeg`, `${BASE}11.2.jpeg`, `${BASE}11.3.jpeg`],
         title: 'UI/UX Systems',
         role: 'Product Interface · Design Engineering',
         stars: 5,
