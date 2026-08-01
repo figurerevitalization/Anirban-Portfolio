@@ -263,6 +263,7 @@ export default function LoadingScreen({ onDone }) {
                 {/* Log */}
                 <div
                     ref={logRef}
+                    className="no-scrollbar"
                     style={{
                         padding: '18px 20px 10px',
                         minHeight: 200, maxHeight: 250,

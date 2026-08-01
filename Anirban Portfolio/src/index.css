@@ -20,6 +20,27 @@ body {
   overflow-x: hidden;
 }
 
+/* ── Hide scrollbars everywhere, keep scrolling fully functional ── */
+html,
+body {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
 /* ── Profile card: clean glass ──────────────────────────── */
 .profile-card {
   position: relative;

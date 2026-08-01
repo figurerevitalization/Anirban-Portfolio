@@ -141,7 +141,7 @@ const ServiceModal = ({ service, onClose }) => {
                 animate="visible"
                 exit="exit"
                 onClick={(e) => e.stopPropagation()}
-                className="relative w-full max-w-xl md:max-w-2xl rounded-2xl overflow-hidden border border-white/10 max-h-[90vh] overflow-y-auto"
+                className="no-scrollbar relative w-full max-w-xl md:max-w-2xl rounded-2xl overflow-hidden border border-white/10 max-h-[90vh] overflow-y-auto"
                 style={{
                     background: isMobile ? '#131313' : 'linear-gradient(135deg, rgba(255,255,255,0.10) 0%, rgba(200,200,200,0.05) 50%, rgba(255,255,255,0.07) 100%)',
                     backdropFilter: isMobile ? 'none' : 'blur(28px) saturate(140%)',
