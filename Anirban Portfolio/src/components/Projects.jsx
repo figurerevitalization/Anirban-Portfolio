@@ -98,6 +98,8 @@ export default function Projects() {
                                     src={proj.image}
                                     alt={proj.title}
                                     draggable="false"
+                                    loading="lazy"
+                                    decoding="async"
                                     className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none select-none"
                                 />
 

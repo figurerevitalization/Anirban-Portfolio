@@ -134,6 +134,8 @@ const ProjectPage = () => {
                         src={project.image}
                         alt={project.title}
                         className="w-full h-full object-cover select-none pointer-events-none"
+                        fetchPriority="high"
+                        decoding="async"
                         onContextMenu={(e) => e.preventDefault()}
                         onDragStart={(e) => e.preventDefault()}
                     />
@@ -157,6 +159,8 @@ const ProjectPage = () => {
                                 src={img}
                                 alt={`${project.title} view ${i + 1}`}
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 select-none pointer-events-none"
+                                loading="lazy"
+                                decoding="async"
                                 onContextMenu={(e) => e.preventDefault()}
                                 onDragStart={(e) => e.preventDefault()}
                             />

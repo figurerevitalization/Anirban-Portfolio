@@ -7,7 +7,7 @@ const BASE = import.meta.env.BASE_URL;
 const ABOUT_CARDS = [
   {
     id: 'profile',
-    image: `${BASE}center.png`,
+    image: `${BASE}center.webp`,
     alt: 'Anirban Roy',
     overlay: (
       <>
@@ -18,7 +18,7 @@ const ABOUT_CARDS = [
   },
   {
     id: '2',
-    image: `${BASE}right.png`,
+    image: `${BASE}right.webp`,
     alt: 'Featured Work',
     overlay: (
       <>
@@ -29,7 +29,7 @@ const ABOUT_CARDS = [
   },
   {
     id: '3',
-    image: `${BASE}left.png`,
+    image: `${BASE}left.webp`,
     alt: 'Get in Touch',
     overlay: (
       <>

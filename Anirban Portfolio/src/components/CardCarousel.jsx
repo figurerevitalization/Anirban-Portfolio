@@ -60,6 +60,8 @@ export default function CardCarousel({ cards, className = '' }) {
                   alt={card.alt ?? ''}
                   className="card-carousel-card-image"
                   draggable="false"
+                  loading="lazy"
+                  decoding="async"
                 />
                 {card.overlay && (
                   <div className="card-carousel-card-overlay">
