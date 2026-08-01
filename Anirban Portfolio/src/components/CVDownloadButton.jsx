@@ -11,7 +11,7 @@ const CVDownloadButton = () => {
             className="fixed top-20 sm:top-24 left-4 sm:left-6 z-40"
         >
             <a
-                href="https://drive.google.com/file/d/1ILFuua0b5hnRgmYGELPRHr7oe_3iYAWf/view?usp=sharing"
+                href="https://drive.google.com/file/d/1O7C6DB2524Ia5z90Px7mCaXEfb9sGp6D/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group relative flex items-center gap-3 bg-black/40 backdrop-blur-md border border-white/10 px-4 py-2 rounded-sm hover:border-white/40 hover:bg-black/60 transition-all duration-300"
