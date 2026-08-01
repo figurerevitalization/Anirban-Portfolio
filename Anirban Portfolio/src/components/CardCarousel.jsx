@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
 /* Compact stack: cards overlap slightly, small offset for peek */
@@ -7,6 +7,7 @@ const ROTATION_DEG = 4;
 const SIDE_OPACITY = 0.6;
 const TRANSITION_DURATION = 0.45;
 const EASE = [0.25, 0.46, 0.45, 0.94];
+const AUTO_ADVANCE_MS = 3500;
 
 const slotConfig = {
   left:   { x: -CARD_OFFSET_PX, rotate: -ROTATION_DEG, opacity: SIDE_OPACITY, zIndex: 1, scale: 1 },
@@ -23,12 +24,29 @@ function getSlot(cardIndex, centerIndex, total) {
 
 export default function CardCarousel({ cards, className = '' }) {
   const [centerIndex, setCenterIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
   const n = cards.length;
+
+  // Auto-advance; re-arms on every centerIndex change so a manual click
+  // (or hover pause) resets the countdown instead of jumping right after.
+  useEffect(() => {
+    if (n <= 1 || paused) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    const id = setTimeout(() => {
+      setCenterIndex((prev) => (prev + 1) % n);
+    }, AUTO_ADVANCE_MS);
+    return () => clearTimeout(id);
+  }, [centerIndex, n, paused]);
 
   if (n === 0) return null;
 
   return (
-    <div className={`card-carousel-container ${className}`}>
+    <div
+      className={`card-carousel-container ${className}`}
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
       <div className="card-carousel-stack">
         {cards.map((card, i) => {
           const slot = getSlot(i, centerIndex, n);
