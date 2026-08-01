@@ -29,7 +29,9 @@ jobs:
           cache: npm
           cache-dependency-path: "Anirban Portfolio/package-lock.json"
 
-      - run: npm ci
+      # --legacy-peer-deps works around a peer-dep conflict in this repo's
+      # package.json (eslint 10 vs. eslint-plugin-react-hooks 7's <=9 peer range)
+      - run: npm ci --legacy-peer-deps
       - run: npm run build
 
       # SPA fallback so deep links (e.g. /project/some-slug) work on GitHub Pages,
