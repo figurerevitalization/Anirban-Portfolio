@@ -11,7 +11,7 @@ const Hero = ({ onHeroReady }) => {
     const opacity = useTransform(scrollY, [0, 800], [1, 0]);
 
     const [time, setTime] = useState(new Date().toLocaleTimeString());
-    const roles = ["Engineer.", "Designer.", "Creator.", "Thinker."];
+    const roles = ["Engineer.", "Designer.", "Creator.", "Thinker.", "Philosopher.", "Writer.", "Storyteller.", "Explorer.", "Knowledge Seeker."];
     const [roleIndex, setRoleIndex] = useState(0);
     const splineScrollLockRef = useRef(null);
     const [isMobile, setIsMobile] = useState(false);

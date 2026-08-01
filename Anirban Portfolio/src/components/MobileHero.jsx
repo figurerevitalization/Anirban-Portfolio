@@ -336,7 +336,7 @@ function Corner({ pos, label, sublabel }) {
 /* ─────────────────────────────────────────────────────────────────
    Main MobileHero export
    ───────────────────────────────────────────────────────────────── */
-const roles = ['Engineer.', 'Designer.', 'Creator.', 'Thinker.'];
+const roles = ['Engineer.', 'Designer.', 'Creator.', 'Thinker.', 'Philosopher.', 'Writer.', 'Storyteller.', 'Explorer.', 'Knowledge Seeker.'];
 
 export default function MobileHero({ time }) {
     const [roleIndex, setRoleIndex] = useState(0);
