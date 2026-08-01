@@ -156,7 +156,7 @@ const ProjectPage = () => {
                             className="group relative aspect-[16/10] rounded-sm overflow-hidden border border-white/5 grayscale hover:grayscale-0 transition-all duration-700 cursor-zoom-in"
                         >
                             <img
-                                src={img}
+                                src={project.galleryThumbs?.[i] ?? img}
                                 alt={`${project.title} view ${i + 1}`}
                                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 select-none pointer-events-none"
                                 loading="lazy"

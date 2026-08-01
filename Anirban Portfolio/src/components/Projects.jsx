@@ -95,7 +95,7 @@ export default function Projects() {
 
                                 {/* Image */}
                                 <img
-                                    src={proj.image}
+                                    src={proj.thumb}
                                     alt={proj.title}
                                     draggable="false"
                                     loading="lazy"
