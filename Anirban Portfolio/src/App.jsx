@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import LoadingScreen from './components/LoadingScreen';
 import Navbar from './components/Navbar';
+import ScrollDots from './components/ScrollDots';
 import Hero from './components/Hero';
 import AboutMe from './components/AboutMe';
 import Skills from './components/Skills';
@@ -76,6 +77,7 @@ function App() {
         }}
       >
         {!isProjectPage && <Navbar />}
+        {!isProjectPage && <ScrollDots />}
         <main>
           <Routes>
             <Route path="/" element={<LandingPage onHeroReady={handleHeroReady} />} />
